@@ -12,7 +12,7 @@ methodOverride        = require("method-override"),
 flash                 = require("connect-flash");
 
 //mongoose.connect('mongodb://localhost:27017/image_gallary', {useNewUrlParser: true, useUnifiedTopology: true});
-mongoose.connect('mongodb+srv://Vikalp1308:RiyaKannu@cluster0-dujwe.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://Username:Password@cluster0-dujwe.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine","ejs");
 app.use(express.static("public"));
