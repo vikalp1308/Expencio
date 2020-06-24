@@ -1,0 +1,37 @@
+<%- include("./partials/header") %>
+
+<div class="container">
+	<header class="jumbotron">
+		<div class="container text-center">
+			<h1 id="bk">Expense Page</h1>
+			<p>Add your daily expenses here and edit or delete it any time</p>
+			<a class="btn btn-success btn-lg" href="/expenses/new">Add New expense</a>
+		</div>
+	</header>
+	
+	
+	<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+		<% expenses.forEach(function(expense){ %>
+			<% if(currentUser && expense.author.id.equals(currentUser._id)){ %>
+			<div class="col-lg-3 col-md-4 col-sm-6">
+				<div class="thumbnail">
+					<div>
+						<h4 id="back"><strong><%= expense.title %></strong></h4>
+						<h4><%= expense.price %>/- Rs</h4>
+						<h4 class="bac"><%= expense.description %></h4>
+						<em>Submitted At: <%= moment(expense.createdAt).fromNow() %></em>
+					</div>
+					<a class="btn btn-warning bac" href="/expenses/<%= expense._id %>/edit">Edit</a>
+					<form class="delete-form" action="/expenses/<%= expense._id %>?_method=DELETE" method="POST">
+						<button class="btn btn-danger">Delete</button>
+					</form>
+				</div>
+		    </div>
+	        <% } %>
+		<% }) %>
+	</div>	
+</div>
+
+<%- include("./partials/footer") %>
+
+

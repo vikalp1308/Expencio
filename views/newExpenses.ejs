@@ -1,0 +1,28 @@
+<%- include("./partials/header") %>
+
+<div class="container fix3">
+	<div class="row">
+		<h1 style="text-align: center">Add New Expenses</h1>
+        <div style="width: 30%; margin:30px auto;">
+			<form action="/expenses" method="POST">
+				<div class="form-group">
+					<input class="form-control" type="text" name="title" placeholder="Title">
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="number" name="price" placeholder="Amount" min="0.01" step="0.01">
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="text" name="description" placeholder="Description">
+				</div>
+				<div class="form-group">
+					<button class="btn-btn-lg btn-primary btn-block">SUBMIT</button>
+				</div>	
+			</form>
+			<a href="/expenses">GO BACK</a>
+		</div>			   
+	</div>
+</div>
+
+
+
+<%- include("./partials/footer") %>
